@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    .container {
+      display: flex;
+      width: 800px;
+      margin: 50px auto;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+
+    .left-sidebar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 300px;
+      height: auto;
+      color: white;
+      background-color: #164066;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 3px solid white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .right-sidebar {
+      width: 495px;
+      margin: 5px 20px;
+    }
+
+    .right-float {
+      float: right;
+    }
+
+    .contact,
+    .skills,
+    .languages,
+    .soft-skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .underline {
+      text-underline-offset: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: medium;
+      margin-left: -120px;
+      margin-bottom: 5px;
+    }
+
+    .li {
+      list-style: none;
+      padding-bottom: 10px;
+      margin-left: -40px;
+    }
+
+    .span-gap {
+      padding-left: 5px;
+    }
+
+    .li-l {
+      margin-left: -130px;
+    }
+
+    .line {
+      text-underline-offset: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: medium;
+      margin-left: -150px;
+      margin-bottom: 5px;
+    }
+
+    .u-line {
+      text-underline-offset: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: medium;
+      margin-left: -100px;
+      margin-bottom: 5px;
+    }
+
+    .li-gap {
+      padding-bottom: 10px;
+    }
+
+    .li-left {
+      list-style: none;
+      margin-left: -190px;
+    }
+
+    .under-line {
+      text-underline-offset: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: medium;
+      margin-left: -100px;
+      margin-bottom: 5px;
+    }
+
+    .li-g {
+      margin-left: -50px;
+      padding-bottom: 10px;
+    }
+
+    .div-name {
+      background-color: rgb(241, 238, 238);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 500;
+      font-size: x-large;
+      position: relative;
+    }
+
+    .name::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      top: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 2px;
+      background-color: black;
+    }
+
+    .span-name {
+      color: rgb(79, 78, 78);
+    }
+
+    .summary-span {
+      font-size: large;
+      color: #164066;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: block;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+    }
+
+    .para {
+      font-size: medium;
+      font-weight: 500;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #164066;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-section {
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-section h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #164066;
+    }
+
+    .role-tech {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #666;
+    }
+
+    .project-section p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .features {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <main class="left-sidebar">
+
+      <img src="pics/surya.jpg" alt="Profile Picture" class="profile-pic">
+
+      <div class="contact">
+        <u class="underline">CONTACT</u>
+        <ul>
+          <li class="li"><i class="bi bi-envelope-fill"></i> <span class="span-gap">bspreddy021@gmail.com</span></li>
+          <li class="li"><i class="bi bi-phone"></i><span class="span-gap">+91 6302098876</span></li>
+          <li class="li"><i class="bi bi-geo-alt-fill"></i><span class="span-gap">Brahmanapalli, VNK, PKM</span></li>
+          <li class="li"><i class="bi bi-linkedin"></i><span class="span-gap">linkedin.com/bspreddy021</span></li>
+        </ul>
+      </div>
+
+      <div class="skills">
+        <u class="line">Skills</u>
+        <ul class="li-l">
+          <li class="li-gap">Html</li>
+          <li class="li-gap">CSS</li>
+          <li class="li-gap">Javascript</li>
+          <li class="li-gap">NodeJs</li>
+          <li class="li-gap">ExpressJs</li>
+          <li class="li-gap">ReactJs</li>
+          <li class="li-gap">NextJs</li>
+          <li class="li-gap">MongoDB</li>
+          <li class="li-gap">SQL</li>
+          <li class="li-gap">Postges SQL</li>
+          <li class="li-gap">Docker</li>
+          <li class="li-gap">websocket</li>
+        </ul>
+      </div>
+
+      <div class="languages">
+        <u class="u-line">LANGUAGES</u>
+        <ul class="li-left">
+          <li class="li-gap">Telugu</li>
+        </ul>
+      </div>
+
+      <div class="soft-skills">
+        <u class="under-line">SOFT SKILLS</u>
+        <ul class="li-ll">
+          <li class="li-g">Emotional Intelligence</li>
+          <li class="li-g">Adaptability</li>
+          <li class="li-g">Interest in Helping Others</li>
+        </ul>
+      </div>
+
+    </main>
+
+    <aside class="right-sidebar right-float">
+      <div class="sidebar">
+
+        <div class="div-name">
+          <div class="name">
+            Surya Prakash Reddy
+          </div>
+          <div class="span-name">FRONT-END DEVELOPER</div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <span class="summary-span">
+          <h4>SUMMARY</h4>
+        </span>
+        <p class="para">
+          I’m looking for a team where I can grow my skills using modern tools like React, Node.js, Express, and
+          MongoDB. I enjoy working with others and have experience building websites that run smoothly and look good.
+          I’ve worked on projects where I helped add new features and improve user experience. I'm always ready to learn
+          new things and open to moving to a new place if the opportunity is right.
+        </p>
+      </div>
+
+      <div class="section-heading">Projects</div>
+
+      <div class="project-section">
+        <h2>SQL Coding Platform</h2>
+        <div class="role-tech">
+          <span class="highlight">Role:</span> Frontend Developer<br>
+          <span class="highlight">Technologies:</span> Next.js, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM,
+          Docker
+        </div>
+
+        <p>
+          Built a web-based platform where students can learn and practice SQL through interactive query-solving.
+        </p>
+
+        <p class="highlight">Key features include:</p>
+        <ul class="features">
+          <li>SQL Editor with real-time query execution and instant feedback</li>
+          <li>Coding Contests with timers, scoring systems, and live leaderboards</li>
+          <li>Teacher Dashboard to create custom problems, add test cases, and manage contests</li>
+          <li>User Authentication with role-based access for students and teachers</li>
+          <li>Analytics Dashboard to help teachers track student progress and performance</li>
+        </ul>
+
+        <p>
+          I was responsible for developing the frontend using Next.js and Tailwind CSS. Designed and implemented core
+          pages such as the problem list, SQL editor, login system, and leaderboard.
+        </p>
+
+        <p>
+          This project strengthened my frontend skills and gave me hands-on experience building a real-world web
+          application.
+        </p>
+      </div>
+    </aside>
+  </div>
+</body>
+
+</html>

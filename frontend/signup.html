@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function Signup() {
+            const name = document.getElementById('name').value
+            const email = document.getElementById('email').value
+            const number = document.getElementById('number').value
+            const password = document.getElementById('password').value
+            try {
+                const response = await fetch('http://localhost:3001/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, number, password }),
+
+                })
+                const data = await response.json()
+                if (response.ok) {
+                    alert(data.messaage || 'signup Successful')
+                } else {
+                    alert(data.error || 'signup failed')
+                }
+            } catch (err) {
+                console.error('Fetch failed: ', err);
+                alert('Something went wrong while Signup.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label for="name">Name : </label>
+            <input type="text" placeholder="Enter your Name" id="name">
+        </div>
+
+        <div>
+            <label for="Email">Email : </label>
+            <input type="email" placeholder="Enter your Email" id="email">
+        </div>
+
+        <div>
+            <label for="number">Number : </label>
+            <input type="number" placeholder="Enter your Number" id="number">
+        </div>
+
+        <div>
+            <label for="password">Password : </label>
+            <input type="password" placeholder="Enter your Password" id="password">
+        </div>
+
+        <div>
+            <button onclick="Signup()">Signup</button>
+        </div>
+        <div>
+            <a href="login.html">login</a>
+        </div>
+    </div>
+</body>
+
+</html>

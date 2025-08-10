@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        async function auth() {
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:3001/login', {
+                    method: 'POST',
+                    headers: {
+                        // headers → a set of key-value pairs that give extra info about the HTTP request.
+                        // Content-Type → a specific HTTP header that tells the server what kind of data is being sent in the request body.
+                        // application/json → means the data is in JSON format ({"name":"Surya"}) instead of plain text, HTML, XML, etc.
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, password })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.msg);
+                    window.location.href = "Simple-Portfolio-main/index.html";
+                } else {
+                    alert(data.msg);
+                }
+
+            } catch (err) {
+                console.error('Fetch failed: ', err);
+                alert('Something went wrong while logging in.');
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div>
+            <label for="name">Name : </label>
+            <input type="text" name="name" id="name" placeholder="Enter user or Email">
+        </div>
+
+        <div>
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+        </div>
+
+        <div>
+            <button onclick="auth()">login</button>
+        </div>
+
+        <div>
+            <a href="signup.html">Signup</a>
+        </div>
+    </div>
+</body>
+
+</html>
